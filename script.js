@@ -71,6 +71,18 @@ function verifyWinner() {
   }
 }
 
+function restart() {
+  turn = "x";
+  array = [];
+  spaces.forEach(space => {
+    space.dataset.click = ""
+    space.innerHTML = ""
+  })
+  document.getElementById("resultado").innerHTML = ""
+}
+
 spaces.forEach((space) => {
   space.addEventListener("click", insert);
 });
+
+document.getElementById("restart_button").addEventListener("click", restart)
